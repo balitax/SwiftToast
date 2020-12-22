@@ -178,13 +178,13 @@ open class SwiftToastController {
             switch currentToast.style {
             case .navigationBar:
                 if currentToast.aboveStatusBar {
-                    UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelStatusBar + 1
+                    UIApplication.shared.keyWindow?.windowLevel = UIWindow.Level.statusBar + 1
                 } else {
                     UIApplication.shared.statusBarStyle = currentToast.statusBarStyle
                 }
                 
             case .statusBar:
-                UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelStatusBar + 1
+                UIApplication.shared.keyWindow?.windowLevel = UIWindow.Level.statusBar + 1
                 
             case .bottomToTop:
                 break
@@ -194,7 +194,7 @@ open class SwiftToastController {
             }
             
         } else {
-            UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelNormal
+            UIApplication.shared.keyWindow?.windowLevel = UIWindow.Level.normal
             UIApplication.shared.statusBarStyle = applicationStatusBarStyle
         }
     }
